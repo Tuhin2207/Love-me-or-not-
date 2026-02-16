@@ -6,88 +6,64 @@
     <title>Proposed Her</title>
     <link rel="stylesheet" href="./style.css">
     <style>
-    /* পুরো বডির ডিজাইন */
-body {
+  body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ffeef2; /* হালকা গোলাপি ব্যাকগ্রাউন্ড */
-    font-family: 'Poppins', sans-serif;
+    background-color: #ffeef2;
+    font-family: 'Arial', sans-serif;
     text-align: center;
 }
 
-/* কন্টেইনারের ডিজাইন */
 .container {
     background: white;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 350px;
     width: 90%;
 }
 
-/* লেখার ডিজাইন */
 h1 {
     color: #ff4d6d;
-    font-size: 24px;
-    margin-top: 20px;
+    font-size: 22px;
+    margin: 15px 0;
 }
 
 p {
-    color: #555;
-    font-size: 16px;
+    color: #666;
+    font-size: 14px;
 }
 
-/* বাটনগুলোর ডিজাইন */
 .btn {
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
 }
 
 .btn a {
     text-decoration: none;
-    padding: 12px 35px;
-    font-size: 18px;
+    padding: 10px 30px;
     font-weight: bold;
-    border-radius: 50px;
+    border-radius: 25px;
     transition: 0.3s;
+    display: inline-block;
 }
 
-/* 'Yes' বাটন */
-.btn a[href="yes.html"] {
+#yesBtn {
     background-color: #ff4d6d;
     color: white;
 }
 
-.btn a[href="yes.html"]:hover {
-    background-color: #ff758f;
-    transform: scale(1.1);
-}
-
-/* 'No' বাটন */
-.btn a[href="no.html"] {
-    background-color: #ddd;
+#noBtn {
+    background-color: #eee;
     color: #333;
 }
 
-.btn a[href="no.html"]:hover {
-    background-color: #bbb;
-}
-
-/* GIF সেটআপ */
-.tenor-gif-embed {
-    border-radius: 15px;
-    overflow: hidden;
-}
- 
-        /* বাটনটি যাতে লাফালাফি করতে পারে তার জন্য প্রয়োজনীয় স্টাইল */
-        #noBtn {
-            transition: all 0.2s ease;
-        }
     </style>
 </head>
 <body>
@@ -108,6 +84,13 @@ p {
             <a href="#" id="noBtn">No</a>
         </div>
     </div>
+        <div class="container">
+        <img src="https://media.tenor.com/9v8SclHwBCAAAAAM/peach-goma-love.gif" style="width:100%; border-radius:15px;">
+        <h1>I knew it! You Love me a lot 🥰</h1>
+        <p>Finally you said YES! ❤️</p>
+        <div class="btn">
+            <a href="index.html" id="yesBtn">Yay! 🎉</a>
+        </div>
 
     <script>
         const noBtn = document.getElementById('noBtn');
