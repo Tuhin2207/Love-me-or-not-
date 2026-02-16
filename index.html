@@ -5,30 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposed Her</title>
     <style>
+        /* পুরো স্ক্রিনের জন্য এক কালার এবং কোনো সাদা বক্স থাকবে না */
         body {
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #e5a4b4; /* পুরো স্ক্রিন এক কালার */
+            background-color: #e5a4b4 !important; /* ভিডিওর সেই ব্যাকগ্রাউন্ড কালার */
             font-family: 'Arial', sans-serif;
             text-align: center;
             overflow: hidden;
         }
 
-        /* এখানে আমরা সাদা বক্সের ব্যাকগ্রাউন্ড সরিয়ে দিয়েছি */
+        /* কন্টেইনারের সাদা ব্যাকগ্রাউন্ড এবং বর্ডার সরিয়ে দেওয়া হয়েছে */
         .container {
+            background: transparent !important; /* কোনো সাদা বক্স থাকবে না */
+            box-shadow: none !important;
             max-width: 350px;
             width: 90%;
             z-index: 10;
         }
 
         h1 { 
-            color: #333; /* গাঢ় ধূসর রঙ যাতে গোলাপিতে ফুটে ওঠে */
+            color: #333; 
             font-size: 24px; 
             margin: 15px 0; 
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
         }
 
         p { 
@@ -58,12 +60,11 @@
         #noBtn { background-color: #f8f9fa; color: #333; position: relative; }
 
         #gifContainer img { 
-            width: 180px; /* GIF সাইজ একটু বড় করা হয়েছে */
+            width: 180px; 
             height: auto;
             border-radius: 15px;
         }
 
-        /* সাকসেস পেজের GIF এর জন্য বিশেষ স্টাইল */
         .success-img {
             width: 250px !important;
             border-radius: 20px;
@@ -92,7 +93,6 @@
 
         let clickCount = 0;
 
-        // আপনার পছন্দের GIF এবং টেক্সট
         const contents = [
             { q: "Please think again! 🙄", m: "Don't say no so fast 🥺", gif: "https://media.tenor.com/BEBopBnhjVEAAAAi/peach-and-goma-peach-goma.gif" },
             { q: "Ek aur baar soch lo! 😫", m: "I will be very sad 💔", gif: "https://media.tenor.com/GpC0Mty4Z8wAAAAi/mochi-mochi-peach-cat-peach-cat.gif" },
@@ -121,7 +121,6 @@
         noBtn.addEventListener('mouseover', moveButton);
         noBtn.addEventListener('touchstart', (e) => { if (clickCount >= 3) { e.preventDefault(); moveButton(); } });
 
-        // Yes বাটনে ক্লিক করলে আপনার দেওয়া কিস GIF টা আসবে
         yesBtn.addEventListener('click', () => {
             mainContainer.innerHTML = `
                 <img src="https://media.tenor.com/ujzmI6arQ8UAAAAi/prots-kiss.gif" class="success-img">
