@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposed Her</title>
     <style>
-        /* পুরো স্ক্রিনের ব্যাকগ্রাউন্ড কালার */
+        /* ভিডিওর মতো ব্যাকগ্রাউন্ড কালার */
         body {
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 90vh;
-            background-color: #e5a4b4; /* ভিডিওর মতো গাঢ় গোলাপি ব্যাকগ্রাউন্ড */
+            height: 100vh;
+            background-color: #e5a4b4; /* ফিক্সড গোলাপি ব্যাকগ্রাউন্ড */
             font-family: 'Arial', sans-serif;
             text-align: center;
             overflow: hidden;
         }
 
-        /* সাদা কার্ড বা কনটেইনারের ডিজাইন */
+        /* কার্ডের ডিজাইন */
         .container {
             background: white;
             padding: 25px;
-            border-radius: 0px;
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             max-width: 300px;
             width: 85%;
@@ -34,7 +34,6 @@
 
         .btn {
             margin-top: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -52,18 +51,19 @@
         #yesBtn { background-color: #ff4d6d; color: white; }
         #noBtn { background-color: #eee; color: #333; position: relative; }
 
+        /* GIF সাইজ ঠিক করা */
         #gifContainer img { 
             width: 100%; 
             border-radius: 15px; 
-            max-height: 200px; 
-            object-fit: cover;
+            min-height: 150px;
+            background: #f9f9f9;
         }
     </style>
 </head>
 <body>
     <div class="container" id="mainContainer">
         <div id="gifContainer">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndmZnB6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/L4lvBpHW2fAXYHoD68/giphy.gif">
+            <img src="https://media.giphy.com/media/L4lvBpHW2fAXYHoD68/giphy.gif">
         </div>
 
         <h1 id="question">Do you love me? 🤗</h1>
@@ -85,10 +85,11 @@
 
         let clickCount = 0;
 
+        // ৪ ধাপের পরিবর্তন (Giphy ও সরাসরি ইমেজ লিঙ্ক)
         const contents = [
-            { q: "Please think again! 🙄", m: "itni jaldi mat bolo😑 🥺", gif: "https://tenor.com/view/manja-gif-22885016" },
-            { q: "Ek bar aur soch loo! 😫", m: "kyu aisa kar rahi ho plss man jaw.!😣💔", gif: "https://tenor.com/hrThPEbBtO2.gif" },
-            { q: "beautiful pls man jaw na! kinta code likh waogi.!!😓😭", m: "bhut galat bat hay yar.!😭🙇‍♂️", gif: "https://tenor.com/fx7KwQOYBDP.gif" }
+            { q: "Please think again! 🙄", m: "Don't say no so fast 🥺", gif: "https://tenor.com/hrThPEbBtO2.gif" },
+            { q: "One more chance! 😫", m: "Why are you doing this? 💔", gif: "https://tenor.com/babCF.gif" },
+            { q: "Please say Yes! 😭", m: "This is not fair! 🙇‍♂️", gif: "https://tenor.com/vWLc035dVN8.gif" }
         ];
 
         noBtn.addEventListener('click', () => {
@@ -115,10 +116,10 @@
             if (clickCount >= 3) { e.preventDefault(); moveButton(); }
         });
 
-        // Yes বাটনে ক্লিক করলে সাদা কার্ডের ভেতরের কন্টেন্ট বদলাবে, ব্যাকগ্রাউন্ড আগের মতোই থাকবে
+        // Yes বাটনে ক্লিক করলে ডিজাইন ঠিক রেখে কনটেন্ট বদলানো
         yesBtn.addEventListener('click', () => {
             mainContainer.innerHTML = `
-                <img src="https://media.tenor.com/9v8SclHwBCAAAAAM/peach-goma-love.gif" style="width:100%; border-radius:15px;">
+                <img src="https://media.giphy.com/media/l41lH4ADRtAYnGsLe/giphy.gif" style="width:100%; border-radius:15px;">
                 <h1>I knew it! ❤️</h1>
                 <p>Finally you said YES! 🥰</p>
                 <button style="margin-top:20px; background:#ff4d6d; color:white; border-radius:25px; padding:10px 25px; border:none;" onclick="location.reload()">Yay! 🎉</button>
