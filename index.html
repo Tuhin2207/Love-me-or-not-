@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposed Her</title>
     <style>
-        /* ভিডিওর মতো ব্যাকগ্রাউন্ড কালার */
         body {
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #e5a4b4; /* ফিক্সড গোলাপি ব্যাকগ্রাউন্ড */
+            background-color: #e5a4b4; /* ভিডিওর মতো সুন্দর ব্যাকগ্রাউন্ড */
             font-family: 'Arial', sans-serif;
             text-align: center;
             overflow: hidden;
         }
 
-        /* কার্ডের ডিজাইন */
         .container {
             background: white;
             padding: 25px;
@@ -51,19 +49,17 @@
         #yesBtn { background-color: #ff4d6d; color: white; }
         #noBtn { background-color: #eee; color: #333; position: relative; }
 
-        /* GIF সাইজ ঠিক করা */
         #gifContainer img { 
             width: 100%; 
             border-radius: 15px; 
             min-height: 150px;
-            background: #f9f9f9;
         }
     </style>
 </head>
 <body>
     <div class="container" id="mainContainer">
         <div id="gifContainer">
-            <img src="https://media.giphy.com/media/L4lvBpHW2fAXYHoD68/giphy.gif">
+            <img src="https://media.tenor.com/manja-gif-22885016.gif">
         </div>
 
         <h1 id="question">Do you love me? 🤗</h1>
@@ -85,11 +81,11 @@
 
         let clickCount = 0;
 
-        // ৪ ধাপের পরিবর্তন (Giphy ও সরাসরি ইমেজ লিঙ্ক)
+        // আপনার পছন্দের Tenor GIF গুলোর ডিরেক্ট লিংক এখানে বসানো হয়েছে
         const contents = [
-            { q: "Please think again! 🙄", m: "Don't say no so fast 🥺", gif: "https://media.tenor.com/p_VEcmrBsLMAAAAj/manja.gif" },
-            { q: "One more chance! 😫", m: "Why are you doing this? 💔", gif: "https://media.tenor.com/BEBopBnhjVEAAAAi/peach-and-goma-peach-goma.gif" },
-            { q: "Please say Yes! 😭", m: "This is not fair! 🙇‍♂️", gif: "https://media.tenor.com/GpC0Mty4Z8wAAAAi/mochi-mochi-peach-cat-peach-cat.gif" }
+            { q: "Please think again! 🙄", m: "Itni jaldi na matt bolo 🥺", gif: "https://media.tenor.com/S-9VlWz1l7kAAAAM/panda-cry.gif" },
+            { q: "Ek aur baar soch lo! 😫", m: "Kyu aisa kar rahi ho? Pls maan jao 💔", gif: "https://media.tenor.com/y296_9ZRfSgAAAAM/sad-cute.gif" },
+            { q: "Beautiful pls maan jao na! 😭", m: "Bohut galat baat hai yaar 🙇‍♂️", gif: "https://media.tenor.com/T0_6_fF6v8UAAAAM/cute-cry-sad.gif" }
         ];
 
         noBtn.addEventListener('click', () => {
@@ -116,10 +112,9 @@
             if (clickCount >= 3) { e.preventDefault(); moveButton(); }
         });
 
-        // Yes বাটনে ক্লিক করলে ডিজাইন ঠিক রেখে কনটেন্ট বদলানো
         yesBtn.addEventListener('click', () => {
             mainContainer.innerHTML = `
-                <img src="https://media.giphy.com/media/l41lH4ADRtAYnGsLe/giphy.gif" style="width:100%; border-radius:15px;">
+                <img src="https://media.tenor.com/9v8SclHwBCAAAAAM/peach-goma-love.gif" style="width:100%; border-radius:15px;">
                 <h1>I knew it! ❤️</h1>
                 <p>Finally you said YES! 🥰</p>
                 <button style="margin-top:20px; background:#ff4d6d; color:white; border-radius:25px; padding:10px 25px; border:none;" onclick="location.reload()">Yay! 🎉</button>
