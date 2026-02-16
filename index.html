@@ -36,7 +36,7 @@
             border: none;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* সফট শ্যাডো */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* আপনার চাওয়া শ্যাডো */
         }
         #yesBtn { background-color: #ff4d6d; color: white; }
         #noBtn { background-color: #eee; color: #333; position: relative; }
@@ -92,7 +92,7 @@
         noBtn.addEventListener('mouseover', moveButton);
         noBtn.addEventListener('touchstart', (e) => { if (clickCount >= 3) { e.preventDefault(); moveButton(); } });
 
-        // Yes বাটনের ইমেজ এবং টেক্সট ঠিক করা হলো
+        // এই লিঙ্কে এখন আর সমস্যা হবে না ইনশাআল্লাহ
         yesBtn.addEventListener('click', () => {
             mainContainer.innerHTML = `
                 <img src="https://media.tenor.com/9v8SclHwBCAAAAAM/peach-goma-love.gif" style="width:100%; border-radius:15px;">
