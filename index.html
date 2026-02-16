@@ -36,7 +36,7 @@
             border: none;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* আপনার চাওয়া শ্যাডো */
         }
         #yesBtn { background-color: #ff4d6d; color: white; }
         #noBtn { background-color: #eee; color: #333; position: relative; }
@@ -91,9 +91,11 @@
 
         noBtn.addEventListener('mouseover', moveButton);
         noBtn.addEventListener('touchstart', (e) => { if (clickCount >= 3) { e.preventDefault(); moveButton(); } });
+
+        // আপনার দেওয়া নতুন কিস GIF লিংকটি এখানে বসানো হয়েছে
         yesBtn.addEventListener('click', () => {
             mainContainer.innerHTML = `
-                <img src="https://media1.tenor.com/m/fV_389kS6SgAAAAd/mochi-pet-mochi-cat.gif" style="width:100%; border-radius:15px;">
+                <img src="https://media.tenor.com/ujzmI6arQ8UAAAAi/prots-kiss.gif" style="width:100%; border-radius:15px;">
                 <h1>I knew it! ❤️</h1>
                 <p>Finally you said YES! 🥰</p>
                 <button style="margin-top:20px; background:#ff4d6d; color:white; border-radius:25px; padding:10px 25px; border:none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onclick="location.reload()">Yay! 🎉</button>
