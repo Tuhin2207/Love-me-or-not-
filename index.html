@@ -5,29 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposed Her</title>
     <style>
+        /* পুরো স্ক্রিনের ব্যাকগ্রাউন্ড কালার */
         body {
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ffeef2;
+            background-color: #e5a4b4; /* ভিডিওর মতো গাঢ় গোলাপি ব্যাকগ্রাউন্ড */
             font-family: 'Arial', sans-serif;
             text-align: center;
             overflow: hidden;
         }
+
+        /* সাদা কার্ড বা কনটেইনারের ডিজাইন */
         .container {
             background: white;
             padding: 25px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             max-width: 300px;
             width: 85%;
             z-index: 10;
         }
+
         h1 { color: #ff4d6d; font-size: 22px; margin: 15px 0; }
         p { color: #666; font-size: 14px; }
-        .btn { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+
+        .btn {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
         button {
             padding: 10px 25px;
             font-weight: bold;
@@ -36,9 +47,16 @@
             cursor: pointer;
             transition: 0.3s;
         }
+
         #yesBtn { background-color: #ff4d6d; color: white; }
         #noBtn { background-color: #eee; color: #333; position: relative; }
-        #gifContainer img { width: 100%; border-radius: 15px; min-height: 150px; background: #f9f9f9; }
+
+        #gifContainer img { 
+            width: 100%; 
+            border-radius: 15px; 
+            max-height: 200px; 
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -67,9 +85,9 @@
         let clickCount = 0;
 
         const contents = [
-            { q: "Please think again! 🙄", m: "itni jaldi mat bolo😣 🥺", gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndmZnB6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/vA5mj9vYMUEA8/giphy.gif" },
-            { q: "Ek aur bar soch lo! 😫", m: "kyu aisa kar rahi ho pls man jaw 😓 💔", gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndmZnB6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3o7TKVUn7iM8FMEU24/giphy.gif" },
-            { q: "beautiful pls maan jaw na! aur kitna code likh waogi! 😭", m: "bhut glt bat hay yarr 😓😟! 🙇‍♂️", gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndmZnB6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/BEob5qwFkSJ7G/giphy.gif" }
+            { q: "Please think again! 🙄", m: "Don't say no so fast 🥺", gif: "https://media.giphy.com/media/vA5mj9vYMUEA8/giphy.gif" },
+            { q: "One more chance! 😫", m: "Why are you doing this? 💔", gif: "https://media.giphy.com/media/3o7TKVUn7iM8FMEU24/giphy.gif" },
+            { q: "Please say Yes! 😭", m: "This is not fair! 🙇‍♂️", gif: "https://media.tenor.com/T0_6_fF6v8UAAAAM/cute-cry-sad.gif" }
         ];
 
         noBtn.addEventListener('click', () => {
@@ -96,11 +114,12 @@
             if (clickCount >= 3) { e.preventDefault(); moveButton(); }
         });
 
+        // Yes বাটনে ক্লিক করলে সাদা কার্ডের ভেতরের কন্টেন্ট বদলাবে, ব্যাকগ্রাউন্ড আগের মতোই থাকবে
         yesBtn.addEventListener('click', () => {
             mainContainer.innerHTML = `
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNndmZnB6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/l41lH4ADRtAYnGsLe/giphy.gif" style="width:100%; border-radius:15px;">
-                <h1>I knew it you love me a lot 🐸🫶! ❤️</h1>
-                <p>Finally you said YES! 😭🫶💐</p>
+                <img src="https://media.tenor.com/9v8SclHwBCAAAAAM/peach-goma-love.gif" style="width:100%; border-radius:15px;">
+                <h1>I knew it! ❤️</h1>
+                <p>Finally you said YES! 🥰</p>
                 <button style="margin-top:20px; background:#ff4d6d; color:white; border-radius:25px; padding:10px 25px; border:none;" onclick="location.reload()">Yay! 🎉</button>
             `;
         });
