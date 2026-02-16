@@ -6,6 +6,41 @@
     <title>Proposed Her</title>
     <link rel="stylesheet" href="./style.css">
     <style>
+    /* এই কোডটি style.css ফাইলে বসান */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffeef2; /* এই লাইনটিই ব্যাকগ্রাউন্ড গোলাপি করবে */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    width: 90%;
+}
+
+h1 {
+    color: #ff4d6d;
+}
+
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
         #noBtn { transition: all 0.2s ease; position: relative; }
     </style>
 </head>
